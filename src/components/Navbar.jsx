@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   const { user, logout } = useAuth();
@@ -16,7 +17,10 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-brand">
-        <Link to="/">CIT Document Tracker</Link>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <img src={logo} alt="CIT Logo" style={{ height: '36px', width: 'auto' }} />
+          CIT Document Tracker
+        </Link>
       </div>
       <div className="nav-links">
         <Link to="/">Dashboard</Link>

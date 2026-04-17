@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import api from '../api/axiosConfig';
+import logo from '../assets/logo.png';
 
 export default function Login() {
   const { login } = useAuth();
@@ -46,7 +47,9 @@ export default function Login() {
       <div className="login-card">
         {/* Logo / Header */}
         <div className="login-header">
-          <div className="login-logo">CIT</div>
+          <div className="login-logo">
+            <img src={logo} alt="CIT Logo" style={{ width: '60px', height: '60px', objectFit: 'contain' }} />
+          </div>
           <h1>CIT Document Tracker</h1>
           <p>Secure, encrypted, and trackable</p>
         </div>
